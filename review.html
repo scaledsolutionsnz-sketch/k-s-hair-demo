@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leave a Review | K &amp; S Hair</title>
+<meta name="description" content="Tell us how we did at K & S Hair, Motueka. Rate your visit — it only takes a moment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23161311'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' fill='%23b0895a' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="nav solid">
+  <div class="wrap">
+    <a href="index.html" class="brand">K&nbsp;<span>&amp;</span>&nbsp;S Hair</a>
+    <nav class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="tel:+6435280444" class="nav-cta">03 528 0444</a>
+    </nav>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="funnel-page">
+  <div class="funnel-box">
+    <span class="eyebrow">K &amp; S Hair · Motueka</span>
+    <h1>How was your visit?</h1>
+    <p>Tap the stars below — your feedback helps us keep looking after Motueka's hair.</p>
+    <div class="starpick" id="stars">
+      <button data-v="1" aria-label="1 star">★</button>
+      <button data-v="2" aria-label="2 stars">★</button>
+      <button data-v="3" aria-label="3 stars">★</button>
+      <button data-v="4" aria-label="4 stars">★</button>
+      <button data-v="5" aria-label="5 stars">★</button>
+    </div>
+    <p class="funnel-note">Five stars means we nailed it. Anything less and we'd genuinely like the chance to put it right.</p>
+    <p style="margin-top:30px"><a href="index.html" class="back-link">← Back to the salon</a></p>
+  </div>
+</section>
+
+<script>
+  // 4-5 stars -> Google review; 1-3 -> private feedback form
+  var GOOGLE_REVIEW_URL = "https://g.page/r/PLACEHOLDER/review";
+  var stars = document.querySelectorAll('#stars button');
+  stars.forEach(function(btn){
+    btn.addEventListener('mouseenter',function(){
+      var v=+btn.dataset.v; stars.forEach(function(b){b.classList.toggle('hot',+b.dataset.v<=v);});
+    });
+    btn.addEventListener('mouseleave',function(){ stars.forEach(function(b){b.classList.remove('hot');}); });
+    btn.addEventListener('click',function(){
+      var v=+btn.dataset.v;
+      if(v>=4){ window.location.href=GOOGLE_REVIEW_URL; }
+      else{ window.location.href='private.html?rating='+v; }
+    });
+  });
+</script>
+<script src="main.js"></script>
+</body>
+</html>
