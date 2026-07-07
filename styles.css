@@ -3,16 +3,16 @@
    Anchor: near-black charcoal · Accent: champagne bronze */
 
 :root{
-  --ink:#161311;          /* dark anchor */
-  --ink-2:#211c18;
-  --bone:#f3ede4;         /* bone band */
-  --paper:#fbf8f3;        /* light band */
-  --line:#e4dccf;
-  --accent:#b0895a;       /* champagne bronze */
-  --accent-deep:#8f6c40;
-  --text:#221f1c;
-  --muted:#6d655c;
-  --muted-light:#b6aa9a;
+  --ink:#2a2521;          /* charcoal anchor (logo text) */
+  --ink-2:#372f2b;
+  --bone:#f6eae9;         /* soft blush bone band */
+  --paper:#fdf8f6;        /* blush paper band */
+  --line:#eedfe0;
+  --accent:#c67d96;       /* dusty blush rose (logo florals) */
+  --accent-deep:#a85f79;
+  --text:#2c2523;
+  --muted:#7d6f6a;
+  --muted-light:#c7b6b4;
   --radius:16px;
   --radius-sm:10px;
   --maxw:1180px;
@@ -218,6 +218,15 @@ header.nav.solid{background:rgba(22,19,17,.92);backdrop-filter:blur(10px);box-sh
 .rating-summary{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:44px;flex-wrap:wrap}
 .rating-summary .big{font-family:"Cormorant Garamond",serif;font-size:2.6rem;color:var(--ink);line-height:1}
 .rating-summary .g{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.92rem}
+.rating-summary .g{flex-direction:column;align-items:flex-start;gap:4px}
+.fb-inline{color:var(--accent);font-weight:700;font-size:.9rem}
+.fb-inline:hover{color:var(--accent-deep)}
+.hero-logo{width:min(260px,60vw);height:auto;background:#fff;padding:14px 18px;border-radius:14px;margin-bottom:22px;box-shadow:0 20px 50px -24px rgba(0,0,0,.55)}
+.nav-fb{display:inline-flex;align-items:center;color:rgba(243,237,228,.82);transition:color .25s}
+.nav-fb:hover{color:var(--accent)}
+.foot .brand img{height:70px;width:auto;background:#fff;padding:10px 14px;border-radius:12px;display:block}
+.crew-grid.two{grid-template-columns:repeat(2,1fr);max-width:720px;margin-inline:auto}
+@media(max-width:620px){.crew-grid.two{grid-template-columns:1fr}}
 
 /* ===== Review funnel banner ===== */
 .funnel{background:var(--ink);color:var(--paper);text-align:center;padding:92px 0;position:relative;overflow:hidden}
